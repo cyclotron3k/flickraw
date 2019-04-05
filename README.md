@@ -1,4 +1,4 @@
-# Flickr
+# Flickr [![Build Status](https://travis-ci.org/cyclotron3k/flickr.svg?branch=master)](https://travis-ci.org/cyclotron3k/flickr)
 
 Flickr (formerly FlickRaw) is a library to access the [Flickr](https://flickr.com) API in a simple way.
 It maps exactly the methods described in [the official API documentation](https://www.flickr.com/services/api/).
