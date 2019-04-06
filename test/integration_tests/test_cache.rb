@@ -1,12 +1,9 @@
 # -*- coding: utf-8 -*-
 
-lib = File.dirname(__FILE__)
-$:.unshift lib unless $:.include?(lib)
-
-require 'test/unit'
-require 'tempfile'
-require 'yaml'
-require 'benchmark'
+require "test_helper"
+require "tempfile"
+require "yaml"
+require "benchmark"
 
 class TestCache < Test::Unit::TestCase
 
@@ -40,6 +37,7 @@ class TestCache < Test::Unit::TestCase
     assert_operator 10, :<, no_cache_timer / cache_timer
 
   ensure
-    File.unlink path
+    File.unlink path if File.exist? path
   end
+
 end

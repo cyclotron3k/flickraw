@@ -1,10 +1,6 @@
 # -*- coding: utf-8 -*-
 
-lib = File.dirname(__FILE__)
-$:.unshift lib unless $:.include?(lib)
-
-require 'flickr'
-require 'test/unit'
+require "test_helper"
 
 class Basic < Test::Unit::TestCase
 

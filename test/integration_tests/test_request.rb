@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 
-lib = File.dirname(__FILE__)
-$:.unshift lib unless $:.include?(lib)
-
-require 'test/unit'
+require "test_helper"
 
 class TestRequest < Test::Unit::TestCase
 
