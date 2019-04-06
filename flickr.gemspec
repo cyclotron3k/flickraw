@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "pry", "~> 0.11"
   s.add_development_dependency "nokogiri", "~> 1.0"
   s.add_development_dependency "webmock", "~> 2.0"
+  s.add_development_dependency "minitest", "~> 5.0"
 
   s.required_ruby_version = '>= 2.3'
 
