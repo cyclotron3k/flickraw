@@ -8,4 +8,4 @@ rvm:
   - jruby
 script:
   - rake
-  - bundle audit check --update
+  - bundle-audit check --update
