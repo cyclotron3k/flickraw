@@ -7,5 +7,5 @@ rvm:
   - 2.6
   - jruby
 script:
-  - rake
-  - bundle-audit check --update
+  - bundle exec rake
+  - bundle exec bundle-audit check --update
