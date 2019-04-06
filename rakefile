@@ -16,14 +16,14 @@ end
 Rake::TestTask.new(:unit_tests) do |t|
   t.description = "Run the unit tests"
   t.libs        << "test/unit_tests"
-  t.pattern     = "test/unit_tests/test_*.rb"
+  t.pattern     = "test/unit_tests/*_test.rb"
   t.warning     = true
 end
 
 Rake::TestTask.new(:integration_tests) do |t|
   t.description = "Run the integration tests"
   t.libs        << "test/integration_tests"
-  t.pattern     = "test/integration_tests/test_*.rb"
+  t.pattern     = "test/integration_tests/*_test.rb"
   t.warning     = true
 end
 
