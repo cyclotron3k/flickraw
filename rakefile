@@ -1,6 +1,7 @@
-require 'rake/clean'
-require 'rdoc/task'
-require 'rake/testtask'
+require "bundler/gem_tasks"
+require "rake/clean"
+require "rdoc/task"
+require "rake/testtask"
 
 lib = File.expand_path('../lib/', __FILE__)
 $:.unshift lib unless $:.include?(lib)
