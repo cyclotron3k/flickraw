@@ -5,7 +5,7 @@ require "tempfile"
 require "yaml"
 require "benchmark"
 
-class TestCache < Test::Unit::TestCase
+class CacheTest < Minitest::Test
 
   def test_read_and_write
     ::Flickr.class_variable_set :@@initialized, false if ::Flickr.class_variable_get :@@initialized

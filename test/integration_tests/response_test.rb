@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class TestResponse < Test::Unit::TestCase
+class ResponseTest < Minitest::Test
 
   def test_response_keys_are_turned_into_methods
     subject = Flickr::Response.new({ 'le_gal' => 'ok', }, nil)
@@ -16,9 +16,7 @@ class TestResponse < Test::Unit::TestCase
       'illegal; end; raise "Pwned"; def x' => 'skipped'
     }
 
-    assert_nothing_raised {
-      Flickr::Response.new(response_hash, nil)
-    }
+    Flickr::Response.new(response_hash, nil)
 
     subject = Flickr::Response.new(response_hash, nil)
     assert_equal false, subject.methods.include?(:illegal)

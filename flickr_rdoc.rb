@@ -55,14 +55,14 @@ module RDoc
         m.singleton = false
 
         m.start_collecting_tokens
-        m.add_token FakedToken.new( %{
-# Generated automatically from flickr api
-  def #{name}(*args)
-    @flickr.call '#{flickr_method}', *args
-  end
-} )
+        m.add_token FakedToken.new(<<~HEREDOC)
+          # Generated automatically from flickr api
+            def #{name}(*args)
+              @flickr.call '#{flickr_method}', *args
+            end
+        HEREDOC
         doc.add_method m
-         @stats.add_method m
+        @stats.add_method m
       }
     end
 

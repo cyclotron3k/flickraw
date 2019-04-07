@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class Basic < Test::Unit::TestCase
+class MainTest < Minitest::Test
 
   def setup
     @flickr = ::Flickr.new
@@ -331,14 +331,11 @@ class Basic < Test::Unit::TestCase
   # photos
   def test_photos_getInfo
     id = "3839885270"
-    info = nil
-    assert_nothing_raised(Flickr::FailedResponse) {
-      info = @flickr.photos.getInfo(:photo_id => id)
-    }
+    info = @flickr.photos.getInfo(:photo_id => id)
 
     %w{id secret server farm license owner title description dates comments tags media}.each { |m|
       assert_respond_to info, m
-      assert_not_nil info[m]
+      refute_nil info[m]
     }
 
     assert_equal id, info.id
@@ -361,9 +358,9 @@ class Basic < Test::Unit::TestCase
   def test_photos_getSizes
     info = @flickr.photos.getSizes :photo_id => "3839885270"
     assert_equal "https://www.flickr.com/photos/41650587@N02/3839885270/sizes/l/", info.find { |f| f.label == "Large" }.url
-    source = "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_b.jpg"
+    source = /\Ahttps:\/\/(farm3|live)\.staticflickr\.com\/2485\/3839885270_6fb8b54e06_b\.jpg\z/
 
-    assert_equal source, info.find { |f| f.label == "Large"}.source
+    assert_match source, info.find { |f| f.label == "Large"}.source
   end
 
   def test_photos_search
@@ -450,18 +447,12 @@ class Basic < Test::Unit::TestCase
   end
 
   def test_url_escape
-    result_set = nil
-    assert_nothing_raised {
-      result_set = @flickr.photos.search :text => "family vacation"
-    }
+    result_set = @flickr.photos.search :text => "family vacation"
     assert_operator result_set.total.to_i, :>=, 0
 
     # Unicode tests
-    echo = nil
     utf8_text = "Hélène François, €uro"
-    assert_nothing_raised {
-      echo = @flickr.test.echo :utf8_text => utf8_text
-    }
+    echo = @flickr.test.echo :utf8_text => utf8_text
     assert_equal echo.utf8_text, utf8_text
   end
 end

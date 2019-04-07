@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class TestRequest < Test::Unit::TestCase
+class RequestTest < Minitest::Test
 
   def setup
     @flickr = ::Flickr.new
@@ -23,9 +23,7 @@ class TestRequest < Test::Unit::TestCase
   end
 
   def test_invalid_keys_are_skipped
-    assert_nothing_raised {
-      Flickr.new.send :build_classes, ["flickr.hacked; end; raise 'Pwned'; def x"]
-    }
+    Flickr.new.send :build_classes, ["flickr.hacked; end; raise 'Pwned'; def x"]
 
     assert_equal false, @flickr.methods.include?(:hacked)
   end
