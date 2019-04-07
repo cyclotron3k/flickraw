@@ -2,14 +2,16 @@
 
 require "test_helper"
 
-class RequestTest < Minitest::Test
+class BootstrappingTest < Minitest::Test
 
   def setup
-    @flickr = ::Flickr.new
+    VCR.use_cassette("initialize") do
+      @flickr = ::Flickr.new 'api_key', 'shared_secret'
+    end
   end
 
   def test_flickr_api_is_accessible_via_methods
-    Flickr.new.send :build_classes, ['flickr.fully.legal']
+    @flickr.send :build_classes, ['flickr.fully.legal']
 
     assert_equal true, @flickr.methods.include?(:fully)
     assert_equal true, @flickr.fully.methods.include?(:legal)
@@ -17,13 +19,13 @@ class RequestTest < Minitest::Test
 
   def test_invalid_endpoint_definition
     e = assert_raises(RuntimeError) do
-      Flickr.new.send :build_classes, ['not_flickr.something.method']
+      @flickr.send :build_classes, ['not_flickr.something.method']
     end
     assert_equal "Invalid namespace", e.message
   end
 
   def test_invalid_keys_are_skipped
-    Flickr.new.send :build_classes, ["flickr.hacked; end; raise 'Pwned'; def x"]
+    @flickr.send :build_classes, ["flickr.hacked; end; raise 'Pwned'; def x"]
 
     assert_equal false, @flickr.methods.include?(:hacked)
   end

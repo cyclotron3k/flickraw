@@ -1,0 +1,153 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.flickr.com/services/rest/
+    body:
+      encoding: US-ASCII
+      string: text=Flickr+API&method=flickr.groups.search&format=json&nojsoncallback=1
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Flickr/2.0.1 (+https://github.com/cyclotron3k/flickr)
+      Authorization:
+      - OAuth realm="https://api.flickr.com/services/rest/", oauth_consumer_key="00000000000000000000000000000000",
+        oauth_signature="0000000000000000%26", oauth_signature_method="PLAINTEXT", oauth_timestamp="1554611617", oauth_token="",
+        oauth_version="1.0"
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 07 Apr 2019 04:33:38 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2944'
+      P3p:
+      - policyref="https://policies.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM
+        DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND
+        PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV"
+      Cache-Control:
+      - private
+      X-Served-By:
+      - www-bm019.flickr.bf1.yahoo.com
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding
+      Age:
+      - '2'
+      Server:
+      - ATS
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=15552000
+      Expect-Ct:
+      - max-age=31536000, report-uri="http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only"
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: ASCII-8BIT
+      string: '{"groups":{"page":1,"pages":5,"perpage":100,"total":"407","group":[{"nsid":"51035612836@N01","name":"Flickr
+        API","eighteenplus":0,"iconserver":"3686","iconfarm":4,"members":"18708","pool_count":"923","topic_count":"4421","privacy":"3"},{"nsid":"13298494@N00","name":"My
+        Flickr API Website","eighteenplus":0,"iconserver":"0","iconfarm":0,"members":"16","pool_count":"194","topic_count":"2","privacy":"3"},{"nsid":"607726@N21","name":"Nitens
+        Flickr Gadgets","eighteenplus":0,"iconserver":"2162","iconfarm":3,"members":"94","pool_count":"64","topic_count":"16","privacy":"3"},{"nsid":"96035807@N00","name":"Flickr
+        Hacks","eighteenplus":0,"iconserver":"7369","iconfarm":8,"members":"21969","pool_count":"517","topic_count":"2423","privacy":"3"},{"nsid":"92066207@N00","name":"Flickr
+        Screensavr","eighteenplus":0,"iconserver":"160","iconfarm":1,"members":"5","pool_count":"0","topic_count":"6","privacy":"3"},{"nsid":"449504@N22","name":"Flickr
+        Pipes","eighteenplus":0,"iconserver":"1266","iconfarm":2,"members":"361","pool_count":"6009","topic_count":"84","privacy":"3"},{"nsid":"432789@N22","name":"Flickr
+        API Korea","eighteenplus":0,"iconserver":"1080","iconfarm":2,"members":"52","pool_count":"533","topic_count":"5","privacy":"3"},{"nsid":"72112167@N00","name":"REALbasic
+        flickr API","eighteenplus":0,"iconserver":"49","iconfarm":1,"members":"29","pool_count":"8","topic_count":"6","privacy":"3"},{"nsid":"46268655@N00","name":"FlickrBits","eighteenplus":0,"iconserver":"1","iconfarm":1,"members":"120","pool_count":"3512","topic_count":"27","privacy":"3"},{"nsid":"36862591@N00","name":"Easir
+        - Desktop Flickr Browsing","eighteenplus":0,"iconserver":"163","iconfarm":1,"members":"3","pool_count":"4","topic_count":"7","privacy":"3"},{"nsid":"72706585@N00","name":"Yuan.CC
+        Flickr Tools","eighteenplus":0,"iconserver":"10","iconfarm":1,"members":"523","pool_count":"1696","topic_count":"127","privacy":"3"},{"nsid":"1941854@N20","name":"flickr
+        API skills test","eighteenplus":0,"iconserver":"0","iconfarm":0,"members":"11","pool_count":"36","topic_count":"0","privacy":"3"},{"nsid":"309584@N24","name":"Flickr
+        Ideas","eighteenplus":0,"iconserver":"234","iconfarm":1,"members":"11161","pool_count":"1","topic_count":"17694","privacy":"3"},{"nsid":"1056590@N22","name":"Louise''s
+        Flickr Apps","eighteenplus":0,"iconserver":"3478","iconfarm":4,"members":"23","pool_count":"6","topic_count":"9","privacy":"3"},{"nsid":"548074@N20","name":"My
+        Distress over the Flickr Commercial API","eighteenplus":0,"iconserver":"0","iconfarm":0,"members":"1","pool_count":"0","topic_count":"1","privacy":"3"},{"nsid":"14166901@N00","name":"Flickr
+        Camp","eighteenplus":0,"iconserver":"77","iconfarm":1,"members":"38","pool_count":"125","topic_count":"1","privacy":"3"},{"nsid":"864772@N21","name":"testing
+        flickr api","eighteenplus":0,"iconserver":"0","iconfarm":0,"members":"2","pool_count":"1","topic_count":"0","privacy":"3"},{"nsid":"18311773@N00","name":"Mobup","eighteenplus":0,"iconserver":"27","iconfarm":1,"members":"22","pool_count":"46","topic_count":"6","privacy":"3"},{"nsid":"2127066@N25","name":"Test
+        Group for Flickr API","eighteenplus":0,"iconserver":"0","iconfarm":0,"members":"2","pool_count":"1","topic_count":"0","privacy":"3"},{"nsid":"1463192@N23","name":"\u00b7Flickr\u00b7","eighteenplus":0,"iconserver":"4017","iconfarm":5,"members":"383","pool_count":"46953","topic_count":"1","privacy":"3"},{"nsid":"1433470@N22","name":"Statsr","eighteenplus":0,"iconserver":"2755","iconfarm":3,"members":"241","pool_count":"30","topic_count":"87","privacy":"3"},{"nsid":"2700293@N21","name":"55Photos
+        App Discussion","eighteenplus":0,"iconserver":"3889","iconfarm":4,"members":"9","pool_count":"23","topic_count":"1","privacy":"3"},{"nsid":"1495705@N23","name":"Aspire
+        by API in Paris","eighteenplus":0,"iconserver":"4077","iconfarm":5,"members":"6","pool_count":"18","topic_count":"0","privacy":"2"},{"nsid":"709526@N23","name":"flexplore","eighteenplus":0,"iconserver":"3259","iconfarm":4,"members":"444","pool_count":"5","topic_count":"42","privacy":"3"},{"nsid":"1024501@N23","name":"Exxplore
+        - finding best of flickr pictures","eighteenplus":0,"iconserver":"3306","iconfarm":4,"members":"25","pool_count":"256","topic_count":"2","privacy":"3"},{"nsid":"1055929@N25","name":"Flickr
+        Software","eighteenplus":0,"iconserver":"3316","iconfarm":4,"members":"2","pool_count":"0","topic_count":"1","privacy":"3"},{"nsid":"1396396@N20","name":"Amazing
+        Image: Movie","eighteenplus":0,"iconserver":"4075","iconfarm":5,"members":"4","pool_count":"2","topic_count":"0","privacy":"3"},{"nsid":"727411@N22","name":"Flickr
+        API Test","eighteenplus":0,"iconserver":"0","iconfarm":0,"members":"1","pool_count":"0","topic_count":"0","privacy":"3"},{"nsid":"1065413@N20","name":"test035","eighteenplus":0,"iconserver":"0","iconfarm":0,"members":"1","pool_count":"4","topic_count":"0","privacy":"3"},{"nsid":"1474240@N21","name":"Waldi966","eighteenplus":0,"iconserver":"0","iconfarm":0,"members":"1","pool_count":"1","topic_count":"0","privacy":"3"},{"nsid":"3318216@N22","name":"a
+        random group for testing purposes","eighteenplus":0,"iconserver":"0","iconfarm":0,"members":"1","pool_count":"6","topic_count":"0","privacy":"2"},{"nsid":"721094@N24","name":"Test_leep","eighteenplus":0,"iconserver":"0","iconfarm":0,"members":"1","pool_count":"0","topic_count":"0","privacy":"3"},{"nsid":"12369831@N00","name":"flickrDevelopr","eighteenplus":0,"iconserver":"0","iconfarm":0,"members":"1","pool_count":"0","topic_count":"0","privacy":"3"},{"nsid":"329205@N20","name":"Darckr
+        User Group","eighteenplus":0,"iconserver":"171","iconfarm":1,"members":"12","pool_count":"28","topic_count":"5","privacy":"3"},{"nsid":"33655640@N00","name":"photofront
+        - a better frontend for your photos","eighteenplus":0,"iconserver":"71","iconfarm":1,"members":"180","pool_count":"712","topic_count":"62","privacy":"3"},{"nsid":"1390187@N24","name":"Amazing
+        Image: Bridge","eighteenplus":0,"iconserver":"4043","iconfarm":5,"members":"15","pool_count":"14","topic_count":"0","privacy":"3"},{"nsid":"1454416@N22","name":"Amazing
+        Image [Small]: People","eighteenplus":0,"iconserver":"4115","iconfarm":5,"members":"18","pool_count":"16","topic_count":"0","privacy":"3"},{"nsid":"52239847740@N01","name":"zBoard
+        Project","eighteenplus":0,"iconserver":"1","iconfarm":1,"members":"21","pool_count":"7","topic_count":"5","privacy":"3"},{"nsid":"3277067@N24","name":"test_api","eighteenplus":0,"iconserver":"0","iconfarm":0,"members":"1","pool_count":"0","topic_count":"0","privacy":"3"},{"nsid":"405478@N22","name":"Licensing
+        Awareness Working (LAW) Group","eighteenplus":0,"iconserver":"211","iconfarm":1,"members":"1234","pool_count":"0","topic_count":"297","privacy":"3"},{"nsid":"1393324@N20","name":"Opus
+        API Flickr group","eighteenplus":0,"iconserver":"0","iconfarm":0,"members":"2","pool_count":"16","topic_count":"0","privacy":"3"},{"nsid":"1448714@N22","name":"Amazing
+        Image: Sea","eighteenplus":0,"iconserver":"4143","iconfarm":5,"members":"24","pool_count":"56","topic_count":"1","privacy":"3"},{"nsid":"10209098@N00","name":"Portable
+        Flicka","eighteenplus":0,"iconserver":"130","iconfarm":1,"members":"87","pool_count":"4","topic_count":"8","privacy":"3"},{"nsid":"1682833@N22","name":"Flickrwire
+        Photoblogs","eighteenplus":0,"iconserver":"5229","iconfarm":6,"members":"3","pool_count":"4","topic_count":"0","privacy":"3"},{"nsid":"941900@N25","name":"Dopiaza''s
+        Set Manager","eighteenplus":0,"iconserver":"1005","iconfarm":2,"members":"520","pool_count":"0","topic_count":"80","privacy":"3"},{"nsid":"1062864@N20","name":"DITLO
+        Asheville","eighteenplus":0,"iconserver":"3344","iconfarm":4,"members":"174","pool_count":"817","topic_count":"43","privacy":"3"},{"nsid":"1161386@N22","name":"WORLDCHOW
+        Magazine @ Flickr","eighteenplus":0,"iconserver":"3564","iconfarm":4,"members":"14","pool_count":"24","topic_count":"2","privacy":"3"},{"nsid":"1164640@N25","name":"Hiding
+        in Plain Sight \/ Home on Flickr","eighteenplus":0,"iconserver":"2601","iconfarm":3,"members":"3","pool_count":"4","topic_count":"2","privacy":"2"},{"nsid":"1408687@N22","name":"Temporary
+        API Test Group","eighteenplus":0,"iconserver":"0","iconfarm":0,"members":"1","pool_count":"0","topic_count":"0","privacy":"3"},{"nsid":"380429@N20","name":"Pixlr","eighteenplus":0,"iconserver":"1266","iconfarm":2,"members":"121","pool_count":"871","topic_count":"5","privacy":"3"},{"nsid":"397894@N20","name":"Flickriver","eighteenplus":0,"iconserver":"1273","iconfarm":2,"members":"3744","pool_count":"356417","topic_count":"161","privacy":"3"},{"nsid":"2525348@N24","name":"RE\u00b7THINK:
+        Ship in a Bottle","eighteenplus":0,"iconserver":"7366","iconfarm":8,"members":"41","pool_count":"110","topic_count":"0","privacy":"3"},{"nsid":"1713891@N21","name":"Test
+        Group-2","eighteenplus":0,"iconserver":"0","iconfarm":0,"members":"1","pool_count":"3","topic_count":"0","privacy":"3"},{"nsid":"65407844@N00","name":".Net","eighteenplus":0,"iconserver":"8","iconfarm":1,"members":"106","pool_count":"49","topic_count":"7","privacy":"3"},{"nsid":"1818790@N20","name":"Amazing
+        Image [Square Format]","eighteenplus":0,"iconserver":"7009","iconfarm":8,"members":"5","pool_count":"5","topic_count":"0","privacy":"3"},{"nsid":"1372447@N25","name":"Amazing
+        Image B&W: Most Popular","eighteenplus":0,"iconserver":"1205","iconfarm":2,"members":"77","pool_count":"1253","topic_count":"0","privacy":"3"},{"nsid":"1521812@N22","name":"Amazing
+        Image: Natural Indian and Pacific Ozean","eighteenplus":0,"iconserver":"4126","iconfarm":5,"members":"14","pool_count":"18","topic_count":"0","privacy":"3"},{"nsid":"1843765@N21","name":"Amazing
+        Image [Square Format]: People","eighteenplus":0,"iconserver":"7025","iconfarm":8,"members":"12","pool_count":"7","topic_count":"0","privacy":"3"},{"nsid":"1477381@N22","name":"Amazing
+        Image: Studio Portrait","eighteenplus":0,"iconserver":"4080","iconfarm":5,"members":"16","pool_count":"7","topic_count":"0","privacy":"3"},{"nsid":"1381223@N25","name":"Amazing
+        Image: Mountain","eighteenplus":0,"iconserver":"1121","iconfarm":2,"members":"13","pool_count":"48","topic_count":"0","privacy":"3"},{"nsid":"1396374@N20","name":"Amazing
+        Image: Dance","eighteenplus":0,"iconserver":"4029","iconfarm":5,"members":"19","pool_count":"11","topic_count":"0","privacy":"3"},{"nsid":"1390392@N24","name":"Amazing
+        Image: Mexico","eighteenplus":0,"iconserver":"4078","iconfarm":5,"members":"13","pool_count":"193","topic_count":"0","privacy":"3"},{"nsid":"1506334@N23","name":"Amazing
+        Image: France","eighteenplus":0,"iconserver":"4101","iconfarm":5,"members":"27","pool_count":"1620","topic_count":"0","privacy":"3"},{"nsid":"1424706@N23","name":"Amazing
+        Image B&W: Bird","eighteenplus":0,"iconserver":"4099","iconfarm":5,"members":"38","pool_count":"474","topic_count":"0","privacy":"3"},{"nsid":"1379505@N25","name":"Amazing
+        Image: News","eighteenplus":0,"iconserver":"4140","iconfarm":5,"members":"4","pool_count":"0","topic_count":"0","privacy":"3"},{"nsid":"1402052@N20","name":"Amazing
+        Image: Spain","eighteenplus":0,"iconserver":"4101","iconfarm":5,"members":"7","pool_count":"16","topic_count":"0","privacy":"3"},{"nsid":"1451977@N21","name":"Amazing
+        Image: Fun","eighteenplus":0,"iconserver":"4098","iconfarm":5,"members":"10","pool_count":"7","topic_count":"0","privacy":"3"},{"nsid":"1454386@N22","name":"Amazing
+        Image: Light","eighteenplus":0,"iconserver":"4118","iconfarm":5,"members":"5","pool_count":"13","topic_count":"0","privacy":"3"},{"nsid":"1371876@N25","name":"Amazing
+        Image: Man","eighteenplus":0,"iconserver":"4137","iconfarm":5,"members":"5","pool_count":"6","topic_count":"0","privacy":"3"},{"nsid":"1545411@N22","name":"Amazing
+        Image: Almost Nude","eighteenplus":0,"iconserver":"4104","iconfarm":5,"members":"238","pool_count":"30","topic_count":"0","privacy":"3"},{"nsid":"1377506@N25","name":"Amazing
+        Image: Italy","eighteenplus":0,"iconserver":"4079","iconfarm":5,"members":"19","pool_count":"9","topic_count":"0","privacy":"3"},{"nsid":"1428661@N23","name":"Amazing
+        Image: Natural America","eighteenplus":0,"iconserver":"4063","iconfarm":5,"members":"18","pool_count":"19","topic_count":"0","privacy":"3"},{"nsid":"1871184@N22","name":"Amazing
+        Image: Stories","eighteenplus":0,"iconserver":"7023","iconfarm":8,"members":"9","pool_count":"4","topic_count":"0","privacy":"3"},{"nsid":"1474251@N20","name":"Amazing
+        Image: Panning","eighteenplus":0,"iconserver":"4120","iconfarm":5,"members":"11","pool_count":"22","topic_count":"0","privacy":"3"},{"nsid":"1470554@N25","name":"Amazing
+        Image: Fish","eighteenplus":0,"iconserver":"4129","iconfarm":5,"members":"20","pool_count":"128","topic_count":"0","privacy":"3"},{"nsid":"1545417@N22","name":"Amazing
+        Image [framed]: Nude","eighteenplus":0,"iconserver":"4128","iconfarm":5,"members":"72","pool_count":"1","topic_count":"1","privacy":"3"},{"nsid":"1425015@N20","name":"Amazing
+        Image B&W: Child","eighteenplus":0,"iconserver":"1359","iconfarm":2,"members":"24","pool_count":"11","topic_count":"0","privacy":"3"},{"nsid":"1451760@N25","name":"Amazing
+        Image B&W [Small]: People","eighteenplus":0,"iconserver":"4098","iconfarm":5,"members":"14","pool_count":"3","topic_count":"0","privacy":"3"},{"nsid":"1447300@N22","name":"Amazing
+        Image B&W: Female Nude","eighteenplus":0,"iconserver":"4058","iconfarm":5,"members":"1128","pool_count":"200","topic_count":"2","privacy":"3"},{"nsid":"1381041@N24","name":"Amazing
+        Image: Explored","eighteenplus":0,"iconserver":"1118","iconfarm":2,"members":"49","pool_count":"229","topic_count":"3","privacy":"3"},{"nsid":"1427023@N21","name":"Amazing
+        Image [small image sizes only]","eighteenplus":0,"iconserver":"4134","iconfarm":5,"members":"5","pool_count":"95","topic_count":"0","privacy":"3"},{"nsid":"1818778@N20","name":"Amazing
+        Image [Square Format]: B&W","eighteenplus":0,"iconserver":"7006","iconfarm":8,"members":"9","pool_count":"32","topic_count":"0","privacy":"3"},{"nsid":"1431864@N23","name":"Amazing
+        Image: Temple","eighteenplus":0,"iconserver":"4096","iconfarm":5,"members":"11","pool_count":"3","topic_count":"0","privacy":"3"},{"nsid":"1455861@N24","name":"Amazing
+        Image B&W [Small]","eighteenplus":0,"iconserver":"4118","iconfarm":5,"members":"4","pool_count":"18","topic_count":"0","privacy":"3"},{"nsid":"1429751@N23","name":"Amazing
+        Image: Theater","eighteenplus":0,"iconserver":"4120","iconfarm":5,"members":"3","pool_count":"1","topic_count":"0","privacy":"3"},{"nsid":"1396384@N20","name":"Amazing
+        Image: Event","eighteenplus":0,"iconserver":"4064","iconfarm":5,"members":"4","pool_count":"16","topic_count":"0","privacy":"3"},{"nsid":"1373867@N25","name":"Amazing
+        Image: Factory","eighteenplus":0,"iconserver":"4134","iconfarm":5,"members":"2","pool_count":"1","topic_count":"0","privacy":"3"},{"nsid":"1446949@N25","name":"Amazing
+        Image: Traditional Indian and Pacific Ozean","eighteenplus":0,"iconserver":"6021","iconfarm":7,"members":"2","pool_count":"1","topic_count":"0","privacy":"3"},{"nsid":"1419943@N21","name":"Amazing
+        Image B&W: Night","eighteenplus":0,"iconserver":"1151","iconfarm":2,"members":"19","pool_count":"111","topic_count":"0","privacy":"3"},{"nsid":"1394337@N20","name":"Amazing
+        Image: Wild Animal","eighteenplus":0,"iconserver":"4011","iconfarm":5,"members":"12","pool_count":"6","topic_count":"0","privacy":"3"},{"nsid":"1452321@N22","name":"Amazing
+        Image: Music","eighteenplus":0,"iconserver":"1431","iconfarm":2,"members":"13","pool_count":"25","topic_count":"0","privacy":"3"},{"nsid":"1454374@N22","name":"Amazing
+        Image: Healthcare","eighteenplus":0,"iconserver":"4081","iconfarm":5,"members":"5","pool_count":"9","topic_count":"0","privacy":"3"},{"nsid":"1420593@N21","name":"Amazing
+        Image: Lake","eighteenplus":0,"iconserver":"4080","iconfarm":5,"members":"34","pool_count":"429","topic_count":"0","privacy":"3"},{"nsid":"1424708@N23","name":"Amazing
+        Image B&W: Flower","eighteenplus":0,"iconserver":"4009","iconfarm":5,"members":"21","pool_count":"18","topic_count":"0","privacy":"3"},{"nsid":"1447330@N22","name":"Amazing
+        Image B&W: Fun","eighteenplus":0,"iconserver":"4078","iconfarm":5,"members":"3","pool_count":"1","topic_count":"0","privacy":"3"},{"nsid":"1479374@N22","name":"Amazing
+        Image: Fire","eighteenplus":0,"iconserver":"4098","iconfarm":5,"members":"28","pool_count":"98","topic_count":"0","privacy":"3"},{"nsid":"1394926@N20","name":"Amazing
+        Image B&W: Beautiful Girl","eighteenplus":0,"iconserver":"4101","iconfarm":5,"members":"35","pool_count":"80","topic_count":"0","privacy":"3"},{"nsid":"1426190@N23","name":"Amazing
+        Image: Media","eighteenplus":0,"iconserver":"4077","iconfarm":5,"members":"2","pool_count":"0","topic_count":"0","privacy":"3"},{"nsid":"1404513@N25","name":"Amazing
+        Image: Environment","eighteenplus":0,"iconserver":"1034","iconfarm":2,"members":"23","pool_count":"280","topic_count":"0","privacy":"3"},{"nsid":"1445269@N22","name":"Amazing
+        Image B&W: Art","eighteenplus":0,"iconserver":"4135","iconfarm":5,"members":"34","pool_count":"485","topic_count":"0","privacy":"3"}]},"stat":"ok"}'
+    http_version:
+  recorded_at: Sun, 07 Apr 2019 04:33:38 GMT
+recorded_with: VCR 4.0.0

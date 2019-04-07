@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "webmock", "~> 2.0"
   s.add_development_dependency "minitest", "~> 5.0"
   s.add_development_dependency "bundler-audit", "~> 0.6"
+  s.add_development_dependency "vcr"
 
   s.required_ruby_version = '>= 2.3'
 

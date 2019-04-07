@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.flickr.com/services/rest/
+    body:
+      encoding: US-ASCII
+      string: user_id=41650587%40N02&method=flickr.people.getInfo&format=json&nojsoncallback=1
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Flickr/2.0.1 (+https://github.com/cyclotron3k/flickr)
+      Authorization:
+      - OAuth realm="https://api.flickr.com/services/rest/", oauth_consumer_key="00000000000000000000000000000000",
+        oauth_signature="0000000000000000%26", oauth_signature_method="PLAINTEXT", oauth_timestamp="1554611626", oauth_token="",
+        oauth_version="1.0"
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 07 Apr 2019 04:33:47 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '381'
+      P3p:
+      - policyref="https://policies.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM
+        DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND
+        PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV"
+      Cache-Control:
+      - private
+      X-Served-By:
+      - www-bm003.flickr.bf1.yahoo.com
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding
+      Age:
+      - '1'
+      Server:
+      - ATS
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=15552000
+      Expect-Ct:
+      - max-age=31536000, report-uri="http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only"
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: ASCII-8BIT
+      string: '{"person":{"id":"41650587@N02","nsid":"41650587@N02","ispro":0,"can_buy_pro":0,"iconserver":"0","iconfarm":0,"path_alias":null,"has_stats":"0","username":{"_content":"ruby_flickraw"},"realname":{"_content":"Flickraw"},"location":{"_content":""},"timezone":{"label":"Pacific
+        Time (US & Canada); Tijuana","offset":"-08:00","timezone_id":"PST8PDT"},"description":{"_content":""},"photosurl":{"_content":"https:\/\/www.flickr.com\/photos\/41650587@N02\/"},"profileurl":{"_content":"https:\/\/www.flickr.com\/people\/41650587@N02\/"},"mobileurl":{"_content":"https:\/\/m.flickr.com\/photostream.gne?id=41630239"},"photos":{"firstdatetaken":{"_content":"2006-08-15
+        18:52:47"},"firstdate":{"_content":"1250773205"},"count":{"_content":1}}},"stat":"ok"}'
+    http_version:
+  recorded_at: Sun, 07 Apr 2019 04:33:47 GMT
+recorded_with: VCR 4.0.0

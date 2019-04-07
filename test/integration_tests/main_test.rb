@@ -258,22 +258,6 @@ class MainTest < Minitest::Test
     assert_equal(list.size, 10)
   end
 
-  def people(user)
-    assert_equal "41650587@N02", user.id
-    assert_equal "41650587@N02", user.nsid
-    assert_equal "ruby_flickraw", user.username
-  end
-
-  def photo(info)
-    assert_equal "3839885270", info.id
-    assert_equal "41650587@N02", info.owner
-    assert_equal "6fb8b54e06", info.secret
-    assert_equal "2485", info.server
-    assert_equal 3, info.farm
-    assert_equal "cat", info.title
-    assert_equal 1, info.ispublic
-  end
-
   # favorites
   def test_favorites_getPublicList
     list = @flickr.favorites.getPublicList :user_id => "41650587@N02"
@@ -455,4 +439,25 @@ class MainTest < Minitest::Test
     echo = @flickr.test.echo :utf8_text => utf8_text
     assert_equal echo.utf8_text, utf8_text
   end
+
+  private
+
+  # helpers
+
+  def people(user)
+    assert_equal "41650587@N02", user.id
+    assert_equal "41650587@N02", user.nsid
+    assert_equal "ruby_flickraw", user.username
+  end
+
+  def photo(info)
+    assert_equal "3839885270", info.id
+    assert_equal "41650587@N02", info.owner
+    assert_equal "6fb8b54e06", info.secret
+    assert_equal "2485", info.server
+    assert_equal 3, info.farm
+    assert_equal "cat", info.title
+    assert_equal 1, info.ispublic
+  end
+
 end

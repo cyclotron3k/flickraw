@@ -1,0 +1,104 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.flickr.com/services/rest/
+    body:
+      encoding: US-ASCII
+      string: photo_id=3839885270&method=flickr.photos.getExif&format=json&nojsoncallback=1
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Flickr/2.0.1 (+https://github.com/cyclotron3k/flickr)
+      Authorization:
+      - OAuth realm="https://api.flickr.com/services/rest/", oauth_consumer_key="00000000000000000000000000000000",
+        oauth_signature="0000000000000000%26", oauth_signature_method="PLAINTEXT", oauth_timestamp="1554611612", oauth_token="",
+        oauth_version="1.0"
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 07 Apr 2019 04:33:33 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1058'
+      P3p:
+      - policyref="https://policies.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM
+        DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND
+        PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV"
+      Cache-Control:
+      - private
+      X-Served-By:
+      - www288.flickr.bf1.yahoo.com
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding
+      Age:
+      - '0'
+      Server:
+      - ATS
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=15552000
+      Expect-Ct:
+      - max-age=31536000, report-uri="http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only"
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: ASCII-8BIT
+      string: '{"photo":{"id":"3839885270","secret":"6fb8b54e06","server":"2485","farm":3,"camera":"Canon
+        Digital IXUS 55","exif":[{"tagspace":"IFD0","tagspaceid":0,"tag":"Compression","label":"Compression","raw":{"_content":"JPEG
+        (old-style)"}},{"tagspace":"IFD0","tagspaceid":0,"tag":"Make","label":"Make","raw":{"_content":"Canon"}},{"tagspace":"IFD0","tagspaceid":0,"tag":"Model","label":"Model","raw":{"_content":"Canon
+        DIGITAL IXUS 55"}},{"tagspace":"IFD0","tagspaceid":0,"tag":"Orientation","label":"Orientation","raw":{"_content":"Horizontal
+        (normal)"}},{"tagspace":"IFD0","tagspaceid":0,"tag":"XResolution","label":"X-Resolution","raw":{"_content":"180"},"clean":{"_content":"180
+        dpi"}},{"tagspace":"IFD0","tagspaceid":0,"tag":"YResolution","label":"Y-Resolution","raw":{"_content":"180"},"clean":{"_content":"180
+        dpi"}},{"tagspace":"IFD0","tagspaceid":0,"tag":"ResolutionUnit","label":"Resolution
+        Unit","raw":{"_content":"inches"}},{"tagspace":"IFD0","tagspaceid":0,"tag":"ModifyDate","label":"Date
+        and Time (Modified)","raw":{"_content":"2006:08:15 18:52:47"}},{"tagspace":"IFD0","tagspaceid":0,"tag":"YCbCrPositioning","label":"YCbCr
+        Positioning","raw":{"_content":"Centered"}},{"tagspace":"ExifIFD","tagspaceid":0,"tag":"ExposureTime","label":"Exposure","raw":{"_content":"1\/60"},"clean":{"_content":"0.017
+        sec (1\/60)"}},{"tagspace":"ExifIFD","tagspaceid":0,"tag":"FNumber","label":"Aperture","raw":{"_content":"4.9"},"clean":{"_content":"f\/4.9"}},{"tagspace":"ExifIFD","tagspaceid":0,"tag":"ExifVersion","label":"Exif
+        Version","raw":{"_content":"0220"}},{"tagspace":"ExifIFD","tagspaceid":0,"tag":"DateTimeOriginal","label":"Date
+        and Time (Original)","raw":{"_content":"2006:08:15 18:52:47"}},{"tagspace":"ExifIFD","tagspaceid":0,"tag":"CreateDate","label":"Date
+        and Time (Digitized)","raw":{"_content":"2006:08:15 18:52:47"}},{"tagspace":"ExifIFD","tagspaceid":0,"tag":"ComponentsConfiguration","label":"Components
+        Configuration","raw":{"_content":"Y, Cb, Cr, -"}},{"tagspace":"ExifIFD","tagspaceid":0,"tag":"CompressedBitsPerPixel","label":"Compressed
+        Bits Per Pixel","raw":{"_content":"3"}},{"tagspace":"ExifIFD","tagspaceid":0,"tag":"ExposureCompensation","label":"Exposure
+        Bias","raw":{"_content":"0"},"clean":{"_content":"0 EV"}},{"tagspace":"ExifIFD","tagspaceid":0,"tag":"MaxApertureValue","label":"Max
+        Aperture Value","raw":{"_content":"4.9"}},{"tagspace":"ExifIFD","tagspaceid":0,"tag":"MeteringMode","label":"Metering
+        Mode","raw":{"_content":"Multi-segment"}},{"tagspace":"ExifIFD","tagspaceid":0,"tag":"Flash","label":"Flash","raw":{"_content":"Auto,
+        Fired, Red-eye reduction"}},{"tagspace":"ExifIFD","tagspaceid":0,"tag":"FocalLength","label":"Focal
+        Length","raw":{"_content":"17.4 mm"}},{"tagspace":"ExifIFD","tagspaceid":0,"tag":"FlashpixVersion","label":"Flashpix
+        Version","raw":{"_content":"0100"}},{"tagspace":"ExifIFD","tagspaceid":0,"tag":"ColorSpace","label":"Color
+        Space","raw":{"_content":"sRGB"}},{"tagspace":"ExifIFD","tagspaceid":0,"tag":"FocalPlaneXResolution","label":"Focal
+        Plane X-Resolution","raw":{"_content":"7111.111111"},"clean":{"_content":"7111.111111
+        dpi"}},{"tagspace":"ExifIFD","tagspaceid":0,"tag":"FocalPlaneYResolution","label":"Focal
+        Plane Y-Resolution","raw":{"_content":"7142.857143"},"clean":{"_content":"7142.857143
+        dpi"}},{"tagspace":"ExifIFD","tagspaceid":0,"tag":"FocalPlaneResolutionUnit","label":"Focal
+        Plane Resolution Unit","raw":{"_content":"inches"}},{"tagspace":"ExifIFD","tagspaceid":0,"tag":"SensingMethod","label":"Sensing
+        Method","raw":{"_content":"One-chip color area"}},{"tagspace":"ExifIFD","tagspaceid":0,"tag":"FileSource","label":"File
+        Source","raw":{"_content":"Digital Camera"}},{"tagspace":"ExifIFD","tagspaceid":0,"tag":"CustomRendered","label":"Custom
+        Rendered","raw":{"_content":"Normal"}},{"tagspace":"ExifIFD","tagspaceid":0,"tag":"ExposureMode","label":"Exposure
+        Mode","raw":{"_content":"Auto"}},{"tagspace":"ExifIFD","tagspaceid":0,"tag":"WhiteBalance","label":"White
+        Balance","raw":{"_content":"Auto"}},{"tagspace":"ExifIFD","tagspaceid":0,"tag":"DigitalZoomRatio","label":"Digital
+        Zoom Ratio","raw":{"_content":"1"}},{"tagspace":"ExifIFD","tagspaceid":0,"tag":"SceneCaptureType","label":"Scene
+        Capture Type","raw":{"_content":"Standard"}},{"tagspace":"InteropIFD","tagspaceid":0,"tag":"InteropIndex","label":"Interop
+        Index","raw":{"_content":"R98 - DCF basic file (sRGB)"}},{"tagspace":"InteropIFD","tagspaceid":0,"tag":"InteropVersion","label":"Interop
+        Version","raw":{"_content":"0100"}},{"tagspace":"InteropIFD","tagspaceid":0,"tag":"RelatedImageWidth","label":"Related
+        Image Width","raw":{"_content":"1600"}},{"tagspace":"InteropIFD","tagspaceid":0,"tag":"RelatedImageHeight","label":"Related
+        Image Height","raw":{"_content":"1200"}}]},"stat":"ok"}'
+    http_version:
+  recorded_at: Sun, 07 Apr 2019 04:33:33 GMT
+recorded_with: VCR 4.0.0

@@ -1,0 +1,86 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.flickr.com/services/rest/
+    body:
+      encoding: US-ASCII
+      string: group_id=51035612836%40N01&method=flickr.groups.getInfo&format=json&nojsoncallback=1
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Flickr/2.0.1 (+https://github.com/cyclotron3k/flickr)
+      Authorization:
+      - OAuth realm="https://api.flickr.com/services/rest/", oauth_consumer_key="00000000000000000000000000000000",
+        oauth_signature="0000000000000000%26", oauth_signature_method="PLAINTEXT", oauth_timestamp="1554611622", oauth_token="",
+        oauth_version="1.0"
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 07 Apr 2019 04:33:43 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1149'
+      P3p:
+      - policyref="https://policies.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM
+        DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND
+        PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV"
+      Cache-Control:
+      - private
+      X-Served-By:
+      - www65.flickr.bf1.yahoo.com
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding
+      Age:
+      - '1'
+      Server:
+      - ATS
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=15552000
+      Expect-Ct:
+      - max-age=31536000, report-uri="http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only"
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: ASCII-8BIT
+      string: '{"group":{"id":"51035612836@N01","nsid":"51035612836@N01","path_alias":"api","iconserver":"3686","iconfarm":4,"name":{"_content":"Flickr
+        API"},"description":{"_content":"A Flickr group for Flickr API projects. \n\nDriving
+        awareness of the Flickr API, projects that use it and those incredible ideas
+        that programmatically exposed systems produce. Think Google API + Amazon API
+        + Flickr API with a bit of GMail thrown in.\n\nThe developers of Flickr rightly
+        pointed out they want to keep technical discussions directly related to the
+        API on the mailing list.\n\nIf you have photos or screenshots that illustrate
+        your use of the API, then feel free to add them. Please be selective though
+        - people don''t necessarily want to see a dozen almost identical screenshots
+        of your app - just one or two that show off the most interesting aspects.
+        \n\nPlease don''t add non-API related photos here. Not even Kittens, Babies
+        or Sunsets. They will be rejected."},"rules":{"_content":"This group is dedicated
+        to asking question about the Flickr API, and providing feedback to users of
+        the API.\n\nAny photos not related to the Flickr API or an app developed using
+        the Flickr API will be removed."},"members":{"_content":"18708"},"pool_count":{"_content":"766"},"topic_count":{"_content":"4421"},"privacy":{"_content":"3"},"lang":null,"ispoolmoderated":1,"roles":{"member":"Member","moderator":"Moderator","admin":"Admin"},"photo_limit_opt_out":"0","blast":{"_content":"The
+        old-style Flickr Authentication API has been deprecated since July 31st 2012.
+        Only the new OAuth authentication is now officially supported. More info <a
+        href=\"http:\/\/code.flickr.com\/blog\/2012\/01\/13\/farewell-flickrauth\/\"
+        rel=\"nofollow\">here<\/a>. \n\nThe Flickr API now only supports <a href=\"https:\/\/www.flickr.com\/groups\/api\/discuss\/72157644984640397\/\">HTTPS<\/a>
+        since June 2014. Attempts to call the old http endpoints will result in an
+        error being returned.","date_blast_added":"1406814036","user_id":"78188"},"throttle":{"count":0,"remaining":0,"mode":"disabled"},"restrictions":{"photos_ok":1,"videos_ok":1,"images_ok":1,"screens_ok":1,"art_ok":0,"safe_ok":1,"moderate_ok":0,"restricted_ok":0,"has_geo":0}},"stat":"ok"}'
+    http_version:
+  recorded_at: Sun, 07 Apr 2019 04:33:43 GMT
+recorded_with: VCR 4.0.0

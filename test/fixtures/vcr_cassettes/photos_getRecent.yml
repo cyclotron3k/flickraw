@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.flickr.com/services/rest/
+    body:
+      encoding: US-ASCII
+      string: per_page=10&method=flickr.photos.getRecent&format=json&nojsoncallback=1
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Flickr/2.0.1 (+https://github.com/cyclotron3k/flickr)
+      Authorization:
+      - OAuth realm="https://api.flickr.com/services/rest/", oauth_consumer_key="00000000000000000000000000000000",
+        oauth_signature="0000000000000000%26", oauth_signature_method="PLAINTEXT", oauth_timestamp="1554611630", oauth_token="",
+        oauth_version="1.0"
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 07 Apr 2019 04:33:50 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '866'
+      P3p:
+      - policyref="https://policies.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM
+        DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND
+        PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV"
+      Cache-Control:
+      - private
+      X-Served-By:
+      - www-bm007.flickr.bf1.yahoo.com
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding
+      Age:
+      - '2'
+      Server:
+      - ATS
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=15552000
+      Expect-Ct:
+      - max-age=31536000, report-uri="http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only"
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: ASCII-8BIT
+      string: '{"photos":{"page":1,"pages":100,"perpage":10,"total":1000,"photo":[{"id":"32611050177","owner":"137343793@N08","secret":"aa6f20b9c0","server":"7811","farm":8,"title":"If
+        you have suggestions leave a comment! Check our bio #electricturtles #summer
+        #tshirtprinting #trending #printing #clothingline #hoodies #tshirtdesigns
+        #cute #tshirtshop #fashing #apparel #shirt #tee #motivation #girltee #outfit
+        #customshirt #teeshirts","ispublic":1,"isfriend":0,"isfamily":0},{"id":"40587424753","owner":"83894187@N04","secret":"3da87a6283","server":"7810","farm":8,"title":"Vanguard
+        Squadron.","ispublic":1,"isfriend":0,"isfamily":0},{"id":"40587425603","owner":"152925019@N02","secret":"d7606ff7f3","server":"7814","farm":8,"title":"tumblr_ppeusvbalm1xq6siao1_1280.jpg","ispublic":1,"isfriend":0,"isfamily":0},{"id":"40587426243","owner":"147014697@N04","secret":"ff0f84320d","server":"7831","farm":8,"title":"\uc990\uac70\uc6b4\"\uac15\ub0a8\uc624\ud53c\"\ub2ec\ub9bc-\ub531\uc88b\uc740\ubc24-\uac15\ub0a8\ub531\uc88b\uc740\ubc24\uc624\ud53c\uc218\uc775\uad6c\uc870?#\uac15\ub0a8\uc624\ud53c[\uad6c\uae00\uac80\uc0c9_\ub531\uc88b\uc740\ubc24]#\uac15\ub0a8\uc624\ud53c\uac78<\u24d3\u24d3\u24d0\u24da\u24d1\u24d0\u24dc19.\u24d2\u24de\u24dc>#\uc624\ud53cTOP","ispublic":1,"isfriend":0,"isfamily":0},{"id":"46637958785","owner":"153688000@N05","secret":"eca22ecc3c","server":"7908","farm":8,"title":"My
+        sister wedding","ispublic":1,"isfriend":0,"isfamily":0},{"id":"46637959535","owner":"78870992@N06","secret":"89369ae3f6","server":"7810","farm":8,"title":"DSC_6760","ispublic":1,"isfriend":0,"isfamily":0},{"id":"46637959725","owner":"101127448@N05","secret":"fea3431d80","server":"7920","farm":8,"title":"DSC09890.jpg","ispublic":1,"isfriend":0,"isfamily":0},{"id":"46829820114","owner":"10446629@N00","secret":"27858569ab","server":"7891","farm":8,"title":"IMG_20180729_182720_898","ispublic":1,"isfriend":0,"isfamily":0},{"id":"47500700872","owner":"58556987@N04","secret":"c3728c2ff0","server":"7828","farm":8,"title":"justin-hackworth-3-25-1546.jpg","ispublic":1,"isfriend":0,"isfamily":0},{"id":"47553436841","owner":"128144197@N03","secret":"1f5e46c0ac","server":"7859","farm":8,"title":"Robinette
+        Wedding 2019 pt3-88.jpg","ispublic":1,"isfriend":0,"isfamily":0}]},"stat":"ok"}'
+    http_version:
+  recorded_at: Sun, 07 Apr 2019 04:33:51 GMT
+recorded_with: VCR 4.0.0
