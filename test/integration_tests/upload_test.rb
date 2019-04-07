@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
 
-lib = File.dirname(__FILE__)
-$:.unshift lib unless $:.include?(lib)
+require "test_helper"
 
-require 'test/unit'
-
-class TestUpload < Test::Unit::TestCase
+class UploadTest < Minitest::Test
 
   def setup
     @flickr = ::Flickr.new
@@ -15,27 +12,24 @@ class TestUpload < Test::Unit::TestCase
   end
 
   def test_upload
-    u = info = nil
     path = File.dirname(__FILE__) + '/image testée.jpg'
     title = "Titre de l'image testée"
     description = "Ceci est la description de l'image testée"
 
     assert File.exist? path
 
-    assert_nothing_raised do
-      u = @flickr.upload_photo path,
-        :title => title,
-        :description => description
-    end
+    upload = @flickr.upload_photo(
+      path,
+      :title => title,
+      :description => description
+    )
 
-    assert_nothing_raised do
-      info = @flickr.photos.getInfo :photo_id => u.to_s
-    end
+    info = @flickr.photos.getInfo :photo_id => upload.to_s
 
     assert_equal title, info.title
     assert_equal description, info.description
 
-    assert_nothing_raised {@flickr.photos.delete :photo_id => u.to_s}
+    @flickr.photos.delete :photo_id => upload.to_s
   end
 
 end

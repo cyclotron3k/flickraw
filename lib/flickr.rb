@@ -10,7 +10,7 @@ require 'flickr/response_list'
 
 class Flickr
 
-  USER_AGENT                 = "Flickr/#{VERSION} (+https://github.com/hanklords/flickraw)".freeze
+  USER_AGENT                 = "Flickr/#{VERSION} (+https://github.com/cyclotron3k/flickr)".freeze
   END_POINT                  = 'https://api.flickr.com/services'.freeze
   FLICKR_OAUTH_REQUEST_TOKEN = (END_POINT + '/oauth/request_token').freeze
   FLICKR_OAUTH_AUTHORIZE     = (END_POINT + '/oauth/authorize').freeze

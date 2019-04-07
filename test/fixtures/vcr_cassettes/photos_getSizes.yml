@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.flickr.com/services/rest/
+    body:
+      encoding: US-ASCII
+      string: photo_id=3839885270&method=flickr.photos.getSizes&format=json&nojsoncallback=1
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Flickr/2.0.1 (+https://github.com/cyclotron3k/flickr)
+      Authorization:
+      - OAuth realm="https://api.flickr.com/services/rest/", oauth_consumer_key="00000000000000000000000000000000",
+        oauth_signature="0000000000000000%26", oauth_signature_method="PLAINTEXT", oauth_timestamp="1554611623", oauth_token="",
+        oauth_version="1.0"
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 07 Apr 2019 04:33:44 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '396'
+      P3p:
+      - policyref="https://policies.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM
+        DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND
+        PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV"
+      Cache-Control:
+      - private
+      X-Served-By:
+      - www343.flickr.bf1.yahoo.com
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding
+      Age:
+      - '1'
+      Server:
+      - ATS
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=15552000
+      Expect-Ct:
+      - max-age=31536000, report-uri="http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only"
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: ASCII-8BIT
+      string: '{"sizes":{"canblog":0,"canprint":0,"candownload":1,"size":[{"label":"Square","width":75,"height":75,"source":"https:\/\/live.staticflickr.com\/2485\/3839885270_6fb8b54e06_s.jpg","url":"https:\/\/www.flickr.com\/photos\/41650587@N02\/3839885270\/sizes\/sq\/","media":"photo"},{"label":"Large
+        Square","width":"150","height":"150","source":"https:\/\/live.staticflickr.com\/2485\/3839885270_6fb8b54e06_q.jpg","url":"https:\/\/www.flickr.com\/photos\/41650587@N02\/3839885270\/sizes\/q\/","media":"photo"},{"label":"Thumbnail","width":"100","height":"75","source":"https:\/\/live.staticflickr.com\/2485\/3839885270_6fb8b54e06_t.jpg","url":"https:\/\/www.flickr.com\/photos\/41650587@N02\/3839885270\/sizes\/t\/","media":"photo"},{"label":"Small","width":"240","height":"180","source":"https:\/\/live.staticflickr.com\/2485\/3839885270_6fb8b54e06_m.jpg","url":"https:\/\/www.flickr.com\/photos\/41650587@N02\/3839885270\/sizes\/s\/","media":"photo"},{"label":"Small
+        320","width":"320","height":240,"source":"https:\/\/live.staticflickr.com\/2485\/3839885270_6fb8b54e06_n.jpg","url":"https:\/\/www.flickr.com\/photos\/41650587@N02\/3839885270\/sizes\/n\/","media":"photo"},{"label":"Medium","width":"500","height":"375","source":"https:\/\/live.staticflickr.com\/2485\/3839885270_6fb8b54e06.jpg","url":"https:\/\/www.flickr.com\/photos\/41650587@N02\/3839885270\/sizes\/m\/","media":"photo"},{"label":"Medium
+        640","width":"640","height":480,"source":"https:\/\/live.staticflickr.com\/2485\/3839885270_6fb8b54e06_z.jpg","url":"https:\/\/www.flickr.com\/photos\/41650587@N02\/3839885270\/sizes\/z\/","media":"photo"},{"label":"Large","width":"1024","height":"768","source":"https:\/\/live.staticflickr.com\/2485\/3839885270_6fb8b54e06_b.jpg","url":"https:\/\/www.flickr.com\/photos\/41650587@N02\/3839885270\/sizes\/l\/","media":"photo"},{"label":"Original","width":"1600","height":"1200","source":"https:\/\/live.staticflickr.com\/2485\/3839885270_b72bd24f3e_o.jpg","url":"https:\/\/www.flickr.com\/photos\/41650587@N02\/3839885270\/sizes\/o\/","media":"photo"}]},"stat":"ok"}'
+    http_version:
+  recorded_at: Sun, 07 Apr 2019 04:33:44 GMT
+recorded_with: VCR 4.0.0

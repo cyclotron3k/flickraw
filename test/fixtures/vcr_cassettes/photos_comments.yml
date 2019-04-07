@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.flickr.com/services/rest/
+    body:
+      encoding: US-ASCII
+      string: photo_id=3839885270&method=flickr.photos.comments.getList&format=json&nojsoncallback=1
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Flickr/2.0.1 (+https://github.com/cyclotron3k/flickr)
+      Authorization:
+      - OAuth realm="https://api.flickr.com/services/rest/", oauth_consumer_key="00000000000000000000000000000000",
+        oauth_signature="0000000000000000%26", oauth_signature_method="PLAINTEXT", oauth_timestamp="1554611629", oauth_token="",
+        oauth_version="1.0"
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 07 Apr 2019 04:33:50 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '279'
+      P3p:
+      - policyref="https://policies.yahoo.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM
+        DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND
+        PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE LOC GOV"
+      Cache-Control:
+      - private
+      X-Served-By:
+      - www-bm026.flickr.bf1.yahoo.com
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding
+      Age:
+      - '2'
+      Server:
+      - ATS
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=15552000
+      Expect-Ct:
+      - max-age=31536000, report-uri="http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only"
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: ASCII-8BIT
+      string: '{"comments":{"photo_id":"3839885270","comment":[{"id":"41630239-3839885270-72157621986549875","author":"41650587@N02","author_is_deleted":0,"authorname":"ruby_flickraw","iconserver":"0","iconfarm":0,"datecreate":"1250959092","permalink":"https:\/\/www.flickr.com\/photos\/41650587@N02\/3839885270\/#comment72157621986549875","path_alias":null,"realname":"Flickraw","_content":"This
+        is a cute cat !"}]},"stat":"ok"}'
+    http_version:
+  recorded_at: Sun, 07 Apr 2019 04:33:50 GMT
+recorded_with: VCR 4.0.0

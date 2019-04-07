@@ -1,0 +1,463 @@
+# -*- coding: utf-8 -*-
+
+require "test_helper"
+
+class MainTest < Minitest::Test
+
+  def setup
+    @flickr = ::Flickr.new
+  end
+
+  def test_request
+    flickr_objects = %w{
+      activity auth blogs cameras collections commons contacts
+      favorites galleries groups interestingness machinetags panda
+      people photos photosets places prefs profile push reflection
+      stats tags test testimonials urls
+    }
+
+    flickr_objects.each { |o|
+      assert_respond_to @flickr, o.to_sym, "Flickr instance should respond to #{o}"
+      assert_kind_of Flickr::Request, @flickr.send(o.to_sym)
+    }
+  end
+
+  def test_known
+    known_methods = %w{
+      flickr.activity.userComments
+      flickr.activity.userPhotos
+      flickr.auth.checkToken
+      flickr.auth.getFrob
+      flickr.auth.getFullToken
+      flickr.auth.getToken
+      flickr.auth.oauth.checkToken
+      flickr.auth.oauth.getAccessToken
+      flickr.blogs.getList
+      flickr.blogs.getServices
+      flickr.blogs.postPhoto
+      flickr.cameras.getBrandModels
+      flickr.cameras.getBrands
+      flickr.collections.getInfo
+      flickr.collections.getTree
+      flickr.commons.getInstitutions
+      flickr.contacts.getList
+      flickr.contacts.getListRecentlyUploaded
+      flickr.contacts.getPublicList
+      flickr.contacts.getTaggingSuggestions
+      flickr.favorites.add
+      flickr.favorites.getContext
+      flickr.favorites.getList
+      flickr.favorites.getPublicList
+      flickr.favorites.remove
+      flickr.galleries.addPhoto
+      flickr.galleries.create
+      flickr.galleries.editMeta
+      flickr.galleries.editPhoto
+      flickr.galleries.editPhotos
+      flickr.galleries.getInfo
+      flickr.galleries.getList
+      flickr.galleries.getListForPhoto
+      flickr.galleries.getPhotos
+      flickr.galleries.removePhoto
+      flickr.groups.browse
+      flickr.groups.discuss.replies.add
+      flickr.groups.discuss.replies.delete
+      flickr.groups.discuss.replies.edit
+      flickr.groups.discuss.replies.getInfo
+      flickr.groups.discuss.replies.getList
+      flickr.groups.discuss.topics.add
+      flickr.groups.discuss.topics.getInfo
+      flickr.groups.discuss.topics.getList
+      flickr.groups.getInfo
+      flickr.groups.join
+      flickr.groups.joinRequest
+      flickr.groups.leave
+      flickr.groups.members.getList
+      flickr.groups.pools.add
+      flickr.groups.pools.getContext
+      flickr.groups.pools.getGroups
+      flickr.groups.pools.getPhotos
+      flickr.groups.pools.remove
+      flickr.groups.search
+      flickr.interestingness.getList
+      flickr.machinetags.getNamespaces
+      flickr.machinetags.getPairs
+      flickr.machinetags.getPredicates
+      flickr.machinetags.getRecentValues
+      flickr.machinetags.getValues
+      flickr.panda.getList
+      flickr.panda.getPhotos
+      flickr.people.findByEmail
+      flickr.people.findByUsername
+      flickr.people.getGroups
+      flickr.people.getInfo
+      flickr.people.getLimits
+      flickr.people.getPhotos
+      flickr.people.getPhotosOf
+      flickr.people.getPublicGroups
+      flickr.people.getPublicPhotos
+      flickr.people.getUploadStatus
+      flickr.photos.addTags
+      flickr.photos.comments.addComment
+      flickr.photos.comments.deleteComment
+      flickr.photos.comments.editComment
+      flickr.photos.comments.getList
+      flickr.photos.comments.getRecentForContacts
+      flickr.photos.delete
+      flickr.photos.geo.batchCorrectLocation
+      flickr.photos.geo.correctLocation
+      flickr.photos.geo.getLocation
+      flickr.photos.geo.getPerms
+      flickr.photos.geo.photosForLocation
+      flickr.photos.geo.removeLocation
+      flickr.photos.geo.setContext
+      flickr.photos.geo.setLocation
+      flickr.photos.geo.setPerms
+      flickr.photos.getAllContexts
+      flickr.photos.getContactsPhotos
+      flickr.photos.getContactsPublicPhotos
+      flickr.photos.getContext
+      flickr.photos.getCounts
+      flickr.photos.getExif
+      flickr.photos.getFavorites
+      flickr.photos.getInfo
+      flickr.photos.getNotInSet
+      flickr.photos.getPerms
+      flickr.photos.getPopular
+      flickr.photos.getRecent
+      flickr.photos.getSizes
+      flickr.photos.getUntagged
+      flickr.photos.getWithGeoData
+      flickr.photos.getWithoutGeoData
+      flickr.photos.licenses.getInfo
+      flickr.photos.licenses.setLicense
+      flickr.photos.notes.add
+      flickr.photos.notes.delete
+      flickr.photos.notes.edit
+      flickr.photos.people.add
+      flickr.photos.people.delete
+      flickr.photos.people.deleteCoords
+      flickr.photos.people.editCoords
+      flickr.photos.people.getList
+      flickr.photos.recentlyUpdated
+      flickr.photos.removeTag
+      flickr.photos.search
+      flickr.photos.setContentType
+      flickr.photos.setDates
+      flickr.photos.setMeta
+      flickr.photos.setPerms
+      flickr.photos.setSafetyLevel
+      flickr.photos.setTags
+      flickr.photos.suggestions.approveSuggestion
+      flickr.photos.suggestions.getList
+      flickr.photos.suggestions.rejectSuggestion
+      flickr.photos.suggestions.removeSuggestion
+      flickr.photos.suggestions.suggestLocation
+      flickr.photos.transform.rotate
+      flickr.photos.upload.checkTickets
+      flickr.photosets.addPhoto
+      flickr.photosets.comments.addComment
+      flickr.photosets.comments.deleteComment
+      flickr.photosets.comments.editComment
+      flickr.photosets.comments.getList
+      flickr.photosets.create
+      flickr.photosets.delete
+      flickr.photosets.editMeta
+      flickr.photosets.editPhotos
+      flickr.photosets.getContext
+      flickr.photosets.getInfo
+      flickr.photosets.getList
+      flickr.photosets.getPhotos
+      flickr.photosets.orderSets
+      flickr.photosets.removePhoto
+      flickr.photosets.removePhotos
+      flickr.photosets.reorderPhotos
+      flickr.photosets.setPrimaryPhoto
+      flickr.places.find
+      flickr.places.findByLatLon
+      flickr.places.getChildrenWithPhotosPublic
+      flickr.places.getInfo
+      flickr.places.getInfoByUrl
+      flickr.places.getPlaceTypes
+      flickr.places.getShapeHistory
+      flickr.places.getTopPlacesList
+      flickr.places.placesForBoundingBox
+      flickr.places.placesForContacts
+      flickr.places.placesForTags
+      flickr.places.placesForUser
+      flickr.places.resolvePlaceId
+      flickr.places.resolvePlaceURL
+      flickr.places.tagsForPlace
+      flickr.prefs.getContentType
+      flickr.prefs.getGeoPerms
+      flickr.prefs.getHidden
+      flickr.prefs.getPrivacy
+      flickr.prefs.getSafetyLevel
+      flickr.profile.getProfile
+      flickr.push.getSubscriptions
+      flickr.push.getTopics
+      flickr.push.subscribe
+      flickr.push.unsubscribe
+      flickr.reflection.getMethodInfo
+      flickr.reflection.getMethods
+      flickr.stats.getCSVFiles
+      flickr.stats.getCollectionDomains
+      flickr.stats.getCollectionReferrers
+      flickr.stats.getCollectionStats
+      flickr.stats.getPhotoDomains
+      flickr.stats.getPhotoReferrers
+      flickr.stats.getPhotoStats
+      flickr.stats.getPhotosetDomains
+      flickr.stats.getPhotosetReferrers
+      flickr.stats.getPhotosetStats
+      flickr.stats.getPhotostreamDomains
+      flickr.stats.getPhotostreamReferrers
+      flickr.stats.getPhotostreamStats
+      flickr.stats.getPopularPhotos
+      flickr.stats.getTotalViews
+      flickr.tags.getClusterPhotos
+      flickr.tags.getClusters
+      flickr.tags.getHotList
+      flickr.tags.getListPhoto
+      flickr.tags.getListUser
+      flickr.tags.getListUserPopular
+      flickr.tags.getListUserRaw
+      flickr.tags.getMostFrequentlyUsed
+      flickr.tags.getRelated
+      flickr.test.echo
+      flickr.test.login
+      flickr.test.null
+      flickr.testimonials.addTestimonial
+      flickr.testimonials.approveTestimonial
+      flickr.testimonials.deleteTestimonial
+      flickr.testimonials.editTestimonial
+      flickr.testimonials.getAllTestimonialsAbout
+      flickr.testimonials.getAllTestimonialsAboutBy
+      flickr.testimonials.getAllTestimonialsBy
+      flickr.testimonials.getPendingTestimonialsAbout
+      flickr.testimonials.getPendingTestimonialsAboutBy
+      flickr.testimonials.getPendingTestimonialsBy
+      flickr.testimonials.getTestimonialsAbout
+      flickr.testimonials.getTestimonialsAboutBy
+      flickr.testimonials.getTestimonialsBy
+      flickr.urls.getGroup
+      flickr.urls.getUserPhotos
+      flickr.urls.getUserProfile
+      flickr.urls.lookupGallery
+      flickr.urls.lookupGroup
+      flickr.urls.lookupUser
+    }
+    found_methods = @flickr.reflection.getMethods
+    assert_instance_of Flickr::ResponseList, found_methods
+    assert_equal known_methods.sort, found_methods.to_a.sort
+  end
+
+  def test_list
+    list = @flickr.photos.getRecent :per_page => '10'
+    assert_instance_of Flickr::ResponseList, list
+    assert_equal(list.size, 10)
+  end
+
+  # favorites
+  def test_favorites_getPublicList
+    list = @flickr.favorites.getPublicList :user_id => "41650587@N02"
+    assert_equal 1, list.size
+    assert_equal "3829093290", list[0].id
+  end
+
+  # groups
+  def test_groups_getInfo
+    info = @flickr.groups.getInfo :group_id => "51035612836@N01"
+    assert_equal "51035612836@N01", info.id
+    assert_equal "Flickr API", info.name
+  end
+
+  def test_groups_search
+    list = @flickr.groups.search :text => "Flickr API"
+    assert list.any? { |g| g.nsid == "51035612836@N01"}
+  end
+
+  # people
+  def test_people_findByEmail
+    user = @flickr.people.findByEmail :find_email => "flickraw@yahoo.com"
+    people user
+  end
+
+  def test_people_findByUsername
+    user = @flickr.people.findByUsername :username => "ruby_flickraw"
+    people user
+  end
+
+  def test_people_getInfo
+    user = @flickr.people.getInfo :user_id => "41650587@N02"
+    people user
+    assert_equal "Flickraw", user.realname
+    assert_equal "https://www.flickr.com/photos/41650587@N02/", user.photosurl
+    assert_equal "https://www.flickr.com/people/41650587@N02/", user.profileurl
+    assert_equal "https://m.flickr.com/photostream.gne?id=41630239", user.mobileurl
+    assert_equal 0, user.ispro
+  end
+
+  def test_people_getPublicGroups
+    groups = @flickr.people.getPublicGroups :user_id => "41650587@N02"
+    assert groups.to_a.empty?
+  end
+
+  def test_people_getPublicPhotos
+    info = @flickr.people.getPublicPhotos :user_id => "41650587@N02"
+    assert_equal 1, info.size
+    assert_equal "1", info.total
+    assert_equal 1, info.pages
+    assert_equal 1, info.page
+    photo info[0]
+  end
+
+  # photos
+  def test_photos_getInfo
+    id = "3839885270"
+    info = @flickr.photos.getInfo(:photo_id => id)
+
+    %w{id secret server farm license owner title description dates comments tags media}.each { |m|
+      assert_respond_to info, m
+      refute_nil info[m]
+    }
+
+    assert_equal id, info.id
+    assert_equal "cat", info.title
+    assert_equal "This is my cat", info.description
+    assert_equal "ruby_flickraw", info.owner["username"]
+    assert_equal "Flickraw", info.owner["realname"]
+    assert_equal %w{cat pet}, info.tags.map { |t| t.to_s}.sort
+  end
+
+  def test_photos_getExif
+    info = @flickr.photos.getExif :photo_id => "3839885270"
+    assert_equal "Canon DIGITAL IXUS 55", info.exif.find { |f| f.tag == "Model"}.raw
+    assert_equal "1/60", info.exif.find { |f| f.tag == "ExposureTime"}.raw
+    assert_equal  "4.9", info.exif.find { |f| f.tag == "FNumber"}.raw
+    assert_equal "1600", info.exif.find { |f| f.tag == "RelatedImageWidth"}.raw
+    assert_equal "1200", info.exif.find { |f| f.tag == "RelatedImageHeight"}.raw
+  end
+
+  def test_photos_getSizes
+    info = @flickr.photos.getSizes :photo_id => "3839885270"
+    assert_equal "https://www.flickr.com/photos/41650587@N02/3839885270/sizes/l/", info.find { |f| f.label == "Large" }.url
+    source = /\Ahttps:\/\/(farm3|live)\.staticflickr\.com\/2485\/3839885270_6fb8b54e06_b\.jpg\z/
+
+    assert_match source, info.find { |f| f.label == "Large"}.source
+  end
+
+  def test_photos_search
+    info = @flickr.photos.search :user_id => "41650587@N02"
+    photo info[0]
+  end
+
+  # photos.comments
+  def test_photos_comments_getList
+    comments = @flickr.photos.comments.getList :photo_id => "3839885270"
+    assert_equal 1, comments.size
+    assert_equal "3839885270", comments.photo_id
+    assert_equal "41630239-3839885270-72157621986549875", comments[0].id
+    assert_equal "41650587@N02", comments[0].author
+    assert_equal "ruby_flickraw", comments[0].authorname
+    assert_equal "https://www.flickr.com/photos/41650587@N02/3839885270/#comment72157621986549875", comments[0].permalink
+    assert_equal "This is a cute cat !", comments[0].to_s
+  end
+
+  # tags
+  def test_tags_getListPhoto
+    tags = @flickr.tags.getListPhoto :photo_id => "3839885270"
+    assert_equal 2, tags.tags.size
+    assert_equal "3839885270", tags.id
+    assert_equal %w{cat pet}, tags.tags.map { |t| t.to_s}.sort
+  end
+
+  def test_tags_getListUser
+    tags = @flickr.tags.getListUser :user_id => "41650587@N02"
+    assert_equal "41650587@N02", tags.id
+    assert_equal %w{cat pet}, tags.tags.sort
+  end
+
+  # urls
+  def test_urls_getGroup
+    info = @flickr.urls.getGroup :group_id => "51035612836@N01"
+    assert_equal "51035612836@N01", info.nsid
+    assert_equal "https://www.flickr.com/groups/api/", info.url
+  end
+
+  def test_urls_getUserPhotos
+    info = @flickr.urls.getUserPhotos :user_id => "41650587@N02"
+    assert_equal "41650587@N02", info.nsid
+    assert_equal "https://www.flickr.com/photos/41650587@N02/", info.url
+  end
+
+  def test_urls_getUserProfile
+    info = @flickr.urls.getUserProfile :user_id => "41650587@N02"
+    assert_equal "41650587@N02", info.nsid
+    assert_equal "https://www.flickr.com/people/41650587@N02/", info.url
+  end
+
+  def test_urls_lookupGroup
+    info = @flickr.urls.lookupGroup :url => "https://www.flickr.com/groups/api/"
+    assert_equal "51035612836@N01", info.id
+    assert_equal "Flickr API", info.groupname
+  end
+
+  def test_urls_lookupUser
+    info = @flickr.urls.lookupUser :url => "https://www.flickr.com/photos/41650587@N02/"
+    assert_equal "41650587@N02", info.id
+    assert_equal "ruby_flickraw", info.username
+  end
+
+  def test_urls
+    id = "3839885270"
+    info = @flickr.photos.getInfo(:photo_id => id)
+
+    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06.jpg", Flickr.url(info)
+    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_m.jpg", Flickr.url_m(info)
+    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_s.jpg", Flickr.url_s(info)
+    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_t.jpg", Flickr.url_t(info)
+    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_b.jpg", Flickr.url_b(info)
+    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_z.jpg", Flickr.url_z(info)
+    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_q.jpg", Flickr.url_q(info)
+    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_n.jpg", Flickr.url_n(info)
+    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_c.jpg", Flickr.url_c(info)
+
+    assert_equal "https://www.flickr.com/people/41650587@N02/", Flickr.url_profile(info)
+    assert_equal "https://www.flickr.com/photos/41650587@N02/", Flickr.url_photostream(info)
+    assert_equal "https://www.flickr.com/photos/41650587@N02/3839885270", Flickr.url_photopage(info)
+    assert_equal "https://www.flickr.com/photos/41650587@N02/sets/", Flickr.url_photosets(info)
+    assert_equal "https://flic.kr/p/6Rjq7s", Flickr.url_short(info)
+  end
+
+  def test_url_escape
+    result_set = @flickr.photos.search :text => "family vacation"
+    assert_operator result_set.total.to_i, :>=, 0
+
+    # Unicode tests
+    utf8_text = "Hélène François, €uro"
+    echo = @flickr.test.echo :utf8_text => utf8_text
+    assert_equal echo.utf8_text, utf8_text
+  end
+
+  private
+
+  # helpers
+
+  def people(user)
+    assert_equal "41650587@N02", user.id
+    assert_equal "41650587@N02", user.nsid
+    assert_equal "ruby_flickraw", user.username
+  end
+
+  def photo(info)
+    assert_equal "3839885270", info.id
+    assert_equal "41650587@N02", info.owner
+    assert_equal "6fb8b54e06", info.secret
+    assert_equal "2485", info.server
+    assert_equal 3, info.farm
+    assert_equal "cat", info.title
+    assert_equal 1, info.ispublic
+  end
+
+end
