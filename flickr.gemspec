@@ -8,8 +8,10 @@ Gem::Specification.new do |s|
   s.email    = "aidan.samuel@gmail.com"
   s.license  = "MIT"
   s.version  = Flickr::VERSION
-  s.files    = Dir["examples/*.rb"] + Dir["test/*.rb"] + Dir["lib/**/*.rb"] + %w{flickr_rdoc.rb LICENSE CHANGELOG.md README.rdoc rakefile}
   s.homepage = "https://github.com/cyclotron3k/flickr"
+  s.files    = Dir.chdir(File.expand_path('..', __FILE__)) do
+    `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  end
 
   s.metadata = {
     "bug_tracker_uri"   => "https://github.com/cyclotron3k/flickr/issues",
@@ -24,7 +26,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "webmock", "~> 2.0"
   s.add_development_dependency "minitest", "~> 5.0"
   s.add_development_dependency "bundler-audit", "~> 0.6"
-  s.add_development_dependency "vcr"
+  s.add_development_dependency "vcr", "~> 4.0"
 
   s.required_ruby_version = '>= 2.3'
 
