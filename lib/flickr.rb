@@ -54,7 +54,7 @@ class Flickr
   # This is the central method. It does the actual request to the Flickr server.
   #
   # Raises FailedResponse if the response status is _failed_.
-  def call(req, args={}, &block)
+  def call(req, args = {}, &block)
     oauth_args = args.delete(:oauth) || {}
     http_response = @oauth_consumer.post_form(REST_PATH, @access_secret, {:oauth_token => @access_token}.merge(oauth_args), build_args(args, req))
     process_response(req, http_response.body)
@@ -88,7 +88,7 @@ class Flickr
   #  flickr.upload_photo '/path/to/the/photo', :title => 'Title', :description => 'This is the description'
   #
   # See https://www.flickr.com/services/api/upload.api.html for more information on the arguments.
-  def upload_photo(file, args={})
+  def upload_photo(file, args = {})
     upload_flickr(UPLOAD_PATH, file, args)
   end
 
@@ -97,7 +97,7 @@ class Flickr
   #  flickr.replace_photo '/path/to/the/photo', :photo_id => id
   #
   # See https://www.flickr.com/services/api/replace.api.html for more information on the arguments.
-  def replace_photo(file, args={})
+  def replace_photo(file, args = {})
     upload_flickr(REPLACE_PATH, file, args)
   end
 
@@ -157,7 +157,7 @@ class Flickr
 
   end
 
-  def build_args(args={}, method_name=nil)
+  def build_args(args = {}, method_name = nil)
     args['method'] = method_name if method_name
     args.merge('format' => 'json', 'nojsoncallback' => '1')
   end
@@ -189,7 +189,7 @@ class Flickr
     end
   end
 
-  def upload_flickr(method, file, args={})
+  def upload_flickr(method, file, args = {})
     oauth_args = args.delete(:oauth) || {}
     args = build_args(args)
     if file.respond_to? :read
@@ -242,17 +242,18 @@ class Flickr
       r
     end
 
-    def url(r);   PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret,   '', 'jpg'] end
-    def url_m(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, '_m', 'jpg'] end
-    def url_s(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, '_s', 'jpg'] end
-    def url_t(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, '_t', 'jpg'] end
-    def url_b(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, '_b', 'jpg'] end
-    def url_z(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, '_z', 'jpg'] end
-    def url_q(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, '_q', 'jpg'] end
-    def url_n(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, '_n', 'jpg'] end
-    def url_c(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, '_c', 'jpg'] end
-    def url_h(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, '_h', 'jpg'] end
-    def url_k(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, '_k', 'jpg'] end
+    def gen_url(r, type)
+      PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, type, 'jpg']
+    end
+
+    def url(r); gen_url(r, '') end
+
+    %W{m s t b z q n c h k}.each do |chr|
+      define_method "url_#{chr}" do |r|
+        gen_url r, "_#{chr}"
+      end
+    end
+
     def url_o(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.originalsecret, '_o', r.originalformat] end
     def url_profile(r); URL_PROFILE + (r.owner.respond_to?(:nsid) ? r.owner.nsid : r.owner) + '/' end
     def url_photopage(r); url_photostream(r) + r.id end
