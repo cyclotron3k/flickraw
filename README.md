@@ -228,6 +228,24 @@ info = flickr.photos.getInfo(:photo_id => "3839885270")
 Flickr.url_photostream(info) # => "https://www.flickr.com/photos/41650587@N02/"
 ```
 
+## Troubleshooting
+
+If you see an error like this:
+
+    There was an error while loading `flickr.gemspec`: invalid byte sequence in US-ASCII. Bundler cannot continue.
+
+It probably means you're trying to use `Flickr` in a default Ruby docker container. The official Ruby Docker image does not specify a locale, and so it defaults to `US-ASCII`. This causes issues because the `Flickr` gem includes `UTF-8` encoded characters.
+
+If you were affected by this problem, you will need to set your container's environment variables to something like the following:
+
+    export LANG=C.UTF-8
+    export LC_ALL=C.UTF-8
+    export LC_CTYPE=C.UTF-8
+
+A popular alternative to `C.UTF-8` would be `en_US.UTF-8`
+
+Also please consider adding a +1 to [this issue](https://github.com/docker-library/ruby/issues/45) on GitHub.
+
 ## Examples
 
 See the *examples* directory to find more examples.
